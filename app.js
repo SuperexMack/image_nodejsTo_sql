@@ -52,16 +52,10 @@ app.get("" , (req,res)=>{
         if(err) throw err;
         console.log("connected")
         
-        
-        
-
 connection.query('select * from  userprofile where id = "33" ' ,(err, rows) =>{ // using rows we can get data as an object
 
 
 // once done , release connection
-
-
-
 
 if(!err){
 
@@ -70,22 +64,10 @@ res.render("index.ejs" , {rows})
 }
 
 
-
-
-
-
-
 }) 
 
 
-
-
-
 })
-
-
-
-
 
 })
 
@@ -101,7 +83,6 @@ return res.status(400).send("no file had been uploaded")
 
 
 }
-
 
 
 // name of the input is sample file
@@ -122,16 +103,10 @@ pool.getConnection((err,connection) =>{
     if(err) throw err;
     console.log("connected")
     
-    
-    
-
 connection.query('UPDATE userprofile SET profile_image = ? where id = "33" ' , [samplefile.name] ,(err, rows) =>{ // using rows we can get data as an object
 
 
 // once done , release connection
-
-
-
 
 if(!err){
 
@@ -145,61 +120,22 @@ console.log(err)
 
 }
 
-
-
-
-
 }) 
 
 
-
-
-
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 // res.send("file uploaded ")
 
 
-
-
 })
 
 
 
 
-
-
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 app.listen(port , (req,res)=>{
